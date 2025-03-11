@@ -19,3 +19,106 @@ A json file is created with the preprocessed data and metadata.
 ### README.md - Project documentation
 ### requirements.txt - List of dependencies
 
+
+# How to run this 
+Follow these steps to set up and run the MCP demo project on your local machine.
+
+### Prerequisites
+- **Python 3.x**: Make sure Python is installed on your system. You can download it from [python.org](https://www.python.org/).
+- **Git**: Install Git to clone the repository. Download it from [git-scm.com](https://git-scm.com/).
+
+### Step 1: Clone the Repository
+1. Open your terminal or command prompt.
+2. Run the following command to clone the repository:
+   ```bash
+   git clone https://github.com/SwetaAIS2024/mcp-demo-ref.git
+   ```
+3. Navigate into the project folder:
+   ```bash
+   cd mcp-demo-ref
+   ```
+
+### Step 2: Set Up the Project
+1. Check if Python is installed:
+   ```bash
+   python --version
+   ```
+   or
+   ```bash
+   python3 --version
+   ```
+2. (Optional) Create a virtual environment to isolate dependencies:
+   ```bash
+   python -m venv venv
+   ```
+   - Activate the virtual environment:
+     - On macOS/Linux:
+       ```bash
+       source venv/bin/activate
+       ```
+     - On Windows:
+       ```bash
+       venv\Scripts\activate
+       ```
+
+### Step 3: Run the Models
+1. **Run `model_a.py`**:
+   - This script preprocesses the input data and generates an MCP message.
+   - Run it using:
+     ```bash
+     python models/model_a.py
+     ```
+   - After running, check the `data/` folder. You should see a file named `mcp_message.json` containing the MCP message.
+
+2. **Run `model_b.py`**:
+   - This script reads the MCP message from `data/mcp_message.json` and makes a prediction.
+   - Run it using:
+     ```bash
+     python models/model_b.py
+     ```
+   - You should see the prediction result printed in the terminal.
+
+### Expected Output
+- **Output of `model_a.py`**:
+  - A JSON file (`data/mcp_message.json`) is created with the preprocessed data and metadata.
+  - Example:
+    ```json
+    {
+      "context_id": "txn_12345",
+      "model_name": "preprocessing_model",
+      "output": {
+        "amount": 150.0,
+        "currency": "USD",
+        "location": "New York",
+        "timestamp": "2023-10-01T12:34:56Z"
+      },
+      "metadata": {
+        "data_version": "v1.0",
+        "preprocessing_steps": ["uppercase_currency", "clean_location"]
+      }
+    }
+    ```
+
+- **Output of `model_b.py`**:
+  - The script reads the MCP message and makes a prediction.
+  - Example:
+    ```json
+    {
+      "context_id": "txn_12345",
+      "model_name": "fraud_prediction_model",
+      "output": {
+        "is_fraud": true
+      },
+      "metadata": {
+        "model_version": "v1.0",
+        "prediction_threshold": 100.0
+      }
+    }
+    ```
+
+### Troubleshooting
+- If you encounter errors, ensure that:
+  - Python is installed correctly.
+  - You are in the correct project directory (`mcp-demo-ref`).
+  - The `data/` folder exists and is writable.
+
