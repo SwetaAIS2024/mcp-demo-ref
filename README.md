@@ -1,3 +1,11 @@
+# MCP Theory 
+ The Model Context Protocol is a framework for enabling communication and collaboration between multiple machine learning models or AI systems. It provides a standardised way for models to :
+ 1. Share the context : Exchange data, metadata and intermediate results
+ 2. Collaborate : Work together to solve complex tasks
+ 3. Interpolate : Allow models built with different frameworks or technologies to communicate seamlessly.
+
+ In short, MCP acts as a language or protocol that models use to talk to each other.
+
 # MCP Demo: Model Context Protocol
 
 This is a simple demo of the **Model Context Protocol (MCP)** using Python. 
