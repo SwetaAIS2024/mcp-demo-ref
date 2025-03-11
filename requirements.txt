@@ -1,0 +1,2 @@
+# requirements.txt
+# No external dependencies are needed for this demo, but you can add them here if needed.

@@ -1,0 +1,17 @@
+{
+  "context_id": "txn_12345",
+  "model_name": "preprocessing_model",
+  "output": {
+    "amount": 150.0,
+    "currency": "USD",
+    "location": "New York",
+    "timestamp": "2023-10-01T12:34:56Z"
+  },
+  "metadata": {
+    "data_version": "v1.0",
+    "preprocessing_steps": [
+      "uppercase_currency",
+      "clean_location"
+    ]
+  }
+}
