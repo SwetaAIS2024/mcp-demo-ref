@@ -1,0 +1,90 @@
+{
+  "servers": [
+    {
+      "name": "MCP Server",
+      "transport": {
+        "type": "sse",
+        "url": "http://localhost:7860/gradio_api/mcp/sse"
+      }
+    }
+  ]
+}
+
+// Example of a remote MCP server configuration
+// Uncomment the following lines to use a remote server instead of the local one
+// Note: Replace the URL with the actual remote server URL
+// {
+//   "servers": [
+//     {
+//       "name": "Remote MCP Server",
+//       "transport": {
+//         "type": "sse",
+//         "url": "https://example.com/gradio_api/mcp/sse"
+//       }
+//     }
+//   ]
+// }
+
+
+
+
+// This configuration allows your UI client to communicate with the Gradio MCP server using the MCP protocol,
+// enabling seamless integration between your frontend and the MCP service.
+// Example of a MCP server configuration for a specific client
+
+// config.json 
+// {
+//   "mcpServers": {
+//     "mcp": {
+//       "url": "http://localhost:7860/gradio_api/mcp/sse"
+//     }
+//   }
+// }
+
+
+
+
+// Configuring an MCP Client within Cursor IDE
+
+// Cursor provides built-in MCP support, allowing you to connect your deployed MCP servers 
+// directly to your development environment.
+
+
+// Configuration
+// Open Cursor settings (Ctrl + Shift + J / Cmd + Shift + J) → MCP tab → Add new global MCP server:
+
+// macOS:
+
+// {
+//   "mcpServers": {
+//     "sentiment-analysis": {
+//       "command": "npx",
+//       "args": [
+//         "-y", 
+//         "mcp-remote", 
+//         "https://YOURUSENAME-mcp-sentiment.hf.space/gradio_api/mcp/sse", 
+//         "--transport", 
+//         "sse-only"
+//       ]
+//     }
+//   }
+// }
+
+// Windows:
+
+// {
+//   "mcpServers": {
+//     "sentiment-analysis": {
+//       "command": "cmd",
+//       "args": [
+//         "/c", 
+//         "npx", 
+//         "-y", 
+//         "mcp-remote", 
+//         "https://YOURUSENAME-mcp-sentiment.hf.space/gradio_api/mcp/sse", 
+//         "--transport", 
+//         "sse-only"
+//       ]
+//     }
+//   }
+// }
